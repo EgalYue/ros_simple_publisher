@@ -31,7 +31,7 @@ int main(int argc, char **argv){
     while(rclcpp::ok()){
         std_msgs::msg::String message;
         message.data = bytedata;
-        RCLCPP_INFO(node->get_logger(), "Publishing: '%s'", message.data.c_str());
+        RCLCPP_INFO(node->get_logger(), "Publishing: "); //'%s'", message.data.c_str());
         publisher->publish(message);
         rclcpp::spin_some(node);
         loop_rate.sleep();    
